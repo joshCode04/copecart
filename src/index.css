@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.montserat {
+  font-family: Montserrat, sans sans-serif;
+}
+.space {
+  font-family: "Space Grotesk", sans-serif;
+}
+.grotesk {
+  font-family: "Hanken Grotesk", sans-serif;
+}
