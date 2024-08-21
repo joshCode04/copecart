@@ -17,11 +17,11 @@ function Payment() {
       </div>
     ),
   });
-  const [copied, setCopied] = useState(""); // State for the copied notification
+  const [copied, setCopied] = useState("");
 
   const addresses = {
-    Bitcoin: "bc1qwk3nuxpe9jln9lgwxx6mk9sw6zmgn8qver3egd",
-    Ethereum: "0x13e93622645d7d5Cb862fA32caB5127499Ca1427",
+    Bitcoin: "bc1qwk3nuxpe9jln9lgwxx6mk9sw6zmgn8qver3eg",
+    Ethereum: "0x13e93622645d7d5Cb862fA32caB5127499Ca142",
     Litecoin: "Your Litecoin Address here",
   };
 
