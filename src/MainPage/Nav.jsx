@@ -15,14 +15,14 @@ function Nav() {
           </div>
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-2">
-              <div className="bg-[#2E5BFF] w-5 h-5 rounded-full"></div>
+              <div className="bg-[#BCC3D0] w-5 h-5 rounded-full"></div>
               <div className="h-[1px] w-[100px] bg-[#BCC3D0]"></div>
               <div className="bg-[#2E5BFF] w-5 h-5 rounded-full"></div>
               <div className="h-[1px] w-[100px] bg-[#BCC3D0]"></div>
               <div className="bg-[#2E5BFF] w-5 h-5 rounded-full"></div>
             </div>
             <div className="flex gap-14 max-[330px]:gap-16 max-[374px]:gap-20 mt-2 font-bold max-[374px]:text-[11.5px] text-[#2E384D]">
-              <p>1. Product</p>
+              <p className="text-[#BCC3D0]">1. Product</p>
               <p>2. Checkout</p>
               <p>3. Finish</p>
             </div>
