@@ -20,9 +20,9 @@ function Payment() {
   const [copied, setCopied] = useState("");
 
   const addresses = {
-    Bitcoin: "bc1qwk3nuxpe9jln9lgwxx6mk9sw6zmgn8qver3eg",
-    Ethereum: "0x13e93622645d7d5Cb862fA32caB5127499Ca142",
-    Litecoin: "Your Litecoin Address here",
+    Bitcoin: "bc1qlc99e96wqqqftc4cy9npmj5msj6xpvkf4v73n5",
+    Ethereum: "0xa38a8a3eE2ff56E33e2D70c4A3e1e0437224041b",
+    Litecoin: "0xa38a8a3eE2ff56E33e2D70c4A3e1e0437224041b",
   };
 
   const handleCopyAddress = (crypto) => {
@@ -61,12 +61,8 @@ function Payment() {
       value: "Litecoin",
       label: (
         <div className="flex items-center">
-          <img
-            src="/litecoin.png"
-            alt="Litecoin Logo"
-            className="w-6 h-6 mr-2"
-          />
-          Litecoin
+          <img src="/USDT.png" alt="usdt Logo" className="w-6 h-6 mr-2" />
+          USDT
         </div>
       ),
     },
@@ -112,22 +108,12 @@ function Payment() {
                 value={addresses[selectedPaymentMethod.value]}
                 readOnly
               />
-              {selectedPaymentMethod.value === "Bitcoin" ||
-              selectedPaymentMethod.value === "Ethereum" ? (
-                <button
-                  onClick={() => handleCopyAddress(selectedPaymentMethod.value)}
-                  className="bg-gray-300 text-black px-3 py-2 rounded-md"
-                >
-                  Copy
-                </button>
-              ) : (
-                <button
-                  disabled
-                  className="bg-gray-300 text-black px-3 py-2 rounded-md opacity-50 cursor-not-allowed"
-                >
-                  Copy
-                </button>
-              )}
+              <button
+                onClick={() => handleCopyAddress(selectedPaymentMethod.value)}
+                className="bg-gray-300 text-black px-3 py-2 rounded-md"
+              >
+                Copy
+              </button>
             </div>
             <div className="flex gap-4 justify-center mt-5">
               <div
