@@ -1,8 +1,35 @@
 import { useState } from "react";
+
+// eslint-disable-next-line react/prop-types
+function Modal({ isOpen }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg p-8 max-w-sm w-full text-center">
+        <h2 className="text-2xl font-semibold mb-4">
+          Your order is being processed.
+        </h2>
+        <p className="text-gray-700 mb-6">
+          Please contact support to send your proof of payment.
+        </p>
+        <a
+          href=""
+          className="bg-[#F26B05] text-white py-2 px-4 rounded hover:bg-[#d55a04]"
+        >
+          Close
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// OrderOverview Component
 function OrderOverview() {
   const [quantity, setQuantity] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for Modal visibility
   const maxQuantity = 1000;
-  const unitPrice = 349.99; // Price per unit
+  const unitPrice = 349; // Price per unit
   const discount = 0; // Assuming no discount
   const shipping = 0; // Assuming no shipping cost
   const salesTaxRate = 0.0; // Assuming no sales tax
@@ -19,10 +46,15 @@ function OrderOverview() {
     }
   };
 
+  const handleOrderNow = () => {
+    setIsModalOpen(true); // Open the modal on button click
+  };
+
   const grossPrice = unitPrice * quantity;
   const netPrice = grossPrice - discount;
   const salesTax = netPrice * salesTaxRate;
   const totalCharge = netPrice + shipping + salesTax;
+
   return (
     <div>
       <div className="bg-white rounded-lg flex-1 max-w-[612px]">
@@ -138,12 +170,18 @@ function OrderOverview() {
             By placing your order you agree to accept the Terms & Conditions,
             having taken due note of the Cancellation Policy.
           </p>
-          <button className="grotesk bg-[#F26B05] w-full mb-5 py-3 text-2xl font-semibold text-white rounded-md shadow-lg hover:shadow-xl">
+          <button
+            className="grotesk bg-[#F26B05] w-full mb-5 py-3 text-2xl font-semibold text-white rounded-md shadow-lg hover:shadow-xl"
+            onClick={handleOrderNow} // Trigger modal on click
+          >
             Order Now
           </button>
           <img src="/image.png" className="m-auto" alt="" />
         </div>
       </div>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} />
     </div>
   );
 }
