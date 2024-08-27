@@ -14,7 +14,7 @@ function Modal({ isOpen }) {
           Please contact support to send your proof of payment.
         </p>
         <a
-          href=""
+          href="https://patriotgoldcoin.com/"
           className="bg-[#F26B05] text-white py-2 px-4 rounded hover:bg-[#d55a04]"
         >
           Close
